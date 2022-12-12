@@ -1,0 +1,44 @@
+.HeaderContainer {
+    position: sticky;
+    top: 0px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 60px;
+    box-shadow: rgb(0 0 0 / 5%) 0px 5px 10px;
+    z-index: 1000;
+    margin-bottom: 15px;
+}
+
+.HeaderTitle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.HeaderContent {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    justify-content: flex-start;
+}
+
+.HeaderLogo {
+    width: 70px;
+}
+
+.HeaderTabs {
+    height: 100%;
+   margin-right: 40px;
+}
+
+.HeaderTabs :where(.css-dev-only-do-not-override-1ij74fp).ant-tabs-top >.ant-tabs-nav {
+    margin: 0px !important;
+    border-bottom: 0px !important;
+}
+
+.HeaderRightContainer {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,1 @@
+export const successSignUp = "Successfully Registered! Thanks";

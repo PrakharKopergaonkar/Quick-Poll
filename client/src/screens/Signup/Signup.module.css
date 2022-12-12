@@ -1,0 +1,32 @@
+.signupContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signupInputForm {
+    padding: 16px;
+    font-size: 14px;
+    background-color: #f6f8fa;
+    width: 27%;
+    border: 1px solid hsl(210deg 21% 89%);
+    border-radius: 6px;
+}
+
+.signupHeader {
+    padding: 13px;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.signupLoginTab {
+    padding: 16px;
+    font-size: 14px;
+    text-align: center;
+    width: 27%;
+    border: 1px solid hsl(210deg 21% 89%);
+    border-radius: 6px;
+}
+
+
