@@ -1,0 +1,28 @@
+{
+  "name": "quick-poll",
+  "version": "1.0.0",
+  "description": "Quick polling app using MERN stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client-install": "npm run install --prefix client",
+    "server-install": "npm run install --prefix server",
+    "client-start": "npm run start --prefix client",
+    "server-start": "npm run start --prefix server",
+    "install": "concurrently \"npm run client-install\" \"npm run server-install\"",
+    "start": "concurrently \"npm run server-start\" \"npm run client-start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrakharKopergaonkar/Quick-Poll.git"
+  },
+  "author": "prakhar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrakharKopergaonkar/Quick-Poll/issues"
+  },
+  "homepage": "https://github.com/PrakharKopergaonkar/Quick-Poll#readme",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
