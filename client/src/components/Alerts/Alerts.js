@@ -6,7 +6,6 @@ import { removeAlert } from '../../actions/alertActions';
 import classes from './Alerts.module.css';
 export default function Alerts() {
   const alerts = useSelector((state) => state.alert);
-  console.log(alerts)
   const dispatch = useDispatch();
 
   const onClose = useCallback((id) => {

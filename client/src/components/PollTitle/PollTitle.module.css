@@ -1,0 +1,10 @@
+.pollTitle {
+    font-size: 24px;
+    padding: 4px 11px;
+    width: 40%;
+}
+
+.createPollTitle {
+    display: flex;
+    align-items: center;
+}

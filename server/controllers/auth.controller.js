@@ -85,7 +85,9 @@ exports.refreshToken = async (req, res) => {
     try {
         let token = req.get("authorization");
         const buffer = Buffer.from(token.split(".")[1], 'base64')
-        const {result} = buffer?.toString()
+        const {result} = JSON.parse(buffer?.toString())
+    
+        const user = await db.user.findOne({email:result})
         const jsontoken = jwt.sign({
             result
         }, process.env.PROJECT_NAME, {
@@ -96,7 +98,8 @@ exports.refreshToken = async (req, res) => {
             status: true,
             message: "Valid Token",
             token: jsontoken,
-            email: result
+            email: result,
+            id: user._id
         });
         
     } catch (error) {

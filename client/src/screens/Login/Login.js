@@ -7,7 +7,6 @@ import classes from './Login.module.css';
 import { postLogin } from '../../actions/authActions';
 function Login() {
 const dispatch = useDispatch();
-
 const onFinish = useCallback((value) => {
     dispatch(postLogin(value))
 }, [dispatch])

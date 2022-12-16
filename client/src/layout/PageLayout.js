@@ -5,11 +5,13 @@ const PageLayout = (Header, Main, Footer) => {
         return (
             <div className={classes.PageLayout}>
                 {Header && <Header {...props} />}
-                {Main && <Main {...props} />}
+                <div className={classes.pageContent}>
+                    {Main && <Main {...props} />}
+                </div>
                 {Footer && <Footer {...props} />}
             </div>
         )
-    }
+    } 
 }
 
 export default PageLayout;

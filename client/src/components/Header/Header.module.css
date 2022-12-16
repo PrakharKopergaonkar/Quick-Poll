@@ -5,8 +5,9 @@
     -webkit-box-align: center;
     align-items: center;
     height: 60px;
-    box-shadow: rgb(0 0 0 / 5%) 0px 5px 10px;
+    box-shadow: #0000000d 0px 5px 10px;
     z-index: 1000;
+    background-color: white;
     margin-bottom: 15px;
 }
 
@@ -19,7 +20,7 @@
 .HeaderContent {
     display: flex;
     align-items: center;
-    width: 95%;
+    width: 100%;
     justify-content: flex-start;
 }
 

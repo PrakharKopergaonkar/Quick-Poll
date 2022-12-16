@@ -2,12 +2,12 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const OptionSchema = new mongoose.Schema({
-    name: {
+    title: {
         type: Schema.Types.String,
         trim: true,
-        required: 'name is required',
+        required: 'title is required',
     },
-    totalSubmits: {
+    value: {
         type: Schema.Types.Number,
         default: 0
     },

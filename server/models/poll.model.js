@@ -2,14 +2,14 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const PollSchema = new mongoose.Schema({
-    name: {
+    title: {
         type: Schema.Types.String,
         trim: true,
-        required: 'name is required',
+        required: 'title is required',
     },
     userID: {
         type: Schema.Types.String,
-        required: 'Created By is required'
+        required: 'User ID is required'
     },
     isActive: {
         type: Schema.Types.Boolean,

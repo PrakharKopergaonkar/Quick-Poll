@@ -1,0 +1,17 @@
+.pollContainer {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.pollContainer .ant-card-body {
+    padding: 15px !important;
+}
+
+.pieChart {
+    height: 10rem;
+}
+
+.pollCards {
+    border: "1px solid lightgrey";
+    cursor: pointer;
+}

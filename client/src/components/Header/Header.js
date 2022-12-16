@@ -16,7 +16,7 @@ export default function Header() {
     useEffect(() => {
         if(location?.pathname === "/") {
             setActiveKey("1");
-        } else if(location?.pathname === "/create-poll") {
+        } else if(location?.pathname === "/createPoll") {
             setActiveKey("2");
         }
     }, [location])
@@ -25,14 +25,14 @@ export default function Header() {
         if(key === "1") {
             Navigate("/");
         } else if(key === "2") {
-            Navigate("/create-poll")
+            Navigate("/createPoll")
         }
     }, [Navigate])
 
     return (
         <div className={classes.HeaderContainer}>
             <div className={classes.HeaderContent}>
-                <div className={classes.HeaderTitle}>
+                <div className={classes.HeaderTitle} onClick={() => Navigate("/")}>
                     <img src="./images/fingerPoll.jpg" alt="" className={classes.HeaderLogo} />
                     Quick Poll
                 </div>

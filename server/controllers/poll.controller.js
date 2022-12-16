@@ -4,7 +4,6 @@ const db = require('../models')
 exports.getPollDetails = async (req, res) => {
     try {
         const { id } = req.params;
-
         const poll = JSON.parse(JSON.stringify(await db.poll.findById(id)));
         const options = await db.option.find({ pollID: id });
         poll["options"] = options;
@@ -25,7 +24,7 @@ exports.getAllUserPolls = async (req, res) => {
     try {
         const {id} = req.params;
         const polls = JSON.parse(JSON.stringify(await db.poll.find({userID:id})))
-
+        console.log(polls)
         for (let i = 0; i<polls.length; i++) {
             const options = await db.option.find({pollID: polls[i]._id});
             polls[i]["options"] = options;
@@ -46,15 +45,13 @@ exports.getAllUserPolls = async (req, res) => {
 
 exports.submitPoll = async (req, res) => {
     try {
-        const { userID, name, options } = req.body;
+        const { userID, title, options } = req.body;
         const Poll = db.poll({
-            name,
+            title,
             userID
         })
-
         await Poll.save();
         const pollID = Poll._id.toString()
-
         await db.option.insertMany(options.map((option) => {
             return {
                 ...option,
@@ -125,7 +122,6 @@ exports.reactivatePoll = async (req, res) => {
 
 exports.updatePoll = async (req, res) => {
     try {
-        console.log(req);
         return res.status(200).json({
             status: 200,
             message: "Poll has been updated"
@@ -141,13 +137,8 @@ exports.updatePoll = async (req, res) => {
 exports.deletePoll = async (req, res) => {
     try {
         const {id} = req.params;
-        const {userID} = req.body;
-
         const Poll = await db.poll.findById(id);
-        if (Poll.userID !== userID) {
-            throw new Error("Access Denied! Unauthorised user")
-        }
-
+        
         await Poll.delete();
         await db.option.deleteMany({pollID: id})
 

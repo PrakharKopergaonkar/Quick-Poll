@@ -37,9 +37,9 @@ module.exports = function (app) {
         "/poll/postSubmitPoll",
         checkToken,
         validate([
-            body('name').not().isEmpty().withMessage("Please enter poll name"),
+            body('title').not().isEmpty().withMessage("Please enter poll title"),
             body("userID").not().isEmpty().withMessage("Please enter User ID"),
-            body("polls").not().isArray({ min: 2 }).withMessage("Please enter atleast 2 options")
+            body("options").isArray({ min: 1 }).withMessage("Please enter atleast 2 options")
         ]),
         controller.submitPoll
     )
@@ -78,7 +78,6 @@ module.exports = function (app) {
         "/poll/deletePoll/:id",
         // checkToken,
         validate([
-            body("userID").not().isEmpty().withMessage("Please enter User ID"),
             param("id").not().isEmpty().withMessage("Please enter poll ID")
         ]),
         controller.deletePoll
